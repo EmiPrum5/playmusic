@@ -10,7 +10,7 @@ import com.example.artists.entity.Song;
 
 public interface SongsRepository extends JpaRepository<Song, Long>{
 
-	Song findByNameContainsIgnoreCase (String name);
+	List<Song> findByNameContainsIgnoreCase (String name);
 	
 	List<Song> findByArtist(Artist artist);
 	
