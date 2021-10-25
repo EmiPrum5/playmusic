@@ -5,11 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+
+@Entity
+@Table(name = "Album")
 public class Album extends EntityBaseData implements Serializable{
 
 	private static final long serialVersionUID = 1L;

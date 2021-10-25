@@ -18,7 +18,7 @@ import lombok.Setter;
 
 
 @Entity
-@Table(name= "artists")
+@Table(name= "artist")
 @Getter
 @Setter
 public class Artist extends EntityBaseData implements Serializable{

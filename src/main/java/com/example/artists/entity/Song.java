@@ -14,7 +14,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "songs")
+@Table(name = "song")
 public class Song extends EntityBaseData implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -35,15 +35,17 @@ public class Song extends EntityBaseData implements Serializable{
 	 * Falta parte del media
 	 */
 	
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false, fetch = FetchType.EAGER)	
+		
 	@JoinColumn(name = "id_autor", referencedColumnName = "id")
+	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false, fetch = FetchType.EAGER)
 	private Artist artist;
 	
 	//luego se pueden agregar co-artistas o featuring
 	
 	
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = true, fetch = FetchType.EAGER)
+	
 	@JoinColumn(name = "id_album", referencedColumnName = "id")
+	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = true, fetch = FetchType.EAGER)
 	private Album album;	
 	
 }
