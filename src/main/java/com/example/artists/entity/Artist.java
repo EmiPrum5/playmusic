@@ -34,7 +34,7 @@ public class Artist extends EntityBaseData implements Serializable{
 	private String name;	
 	
 	@OneToMany(mappedBy = "artist")
-	List<Song> songs = new ArrayList<Song>(); 
+	List<Album> Albums = new ArrayList<Album>(); 
 	
 	
 }

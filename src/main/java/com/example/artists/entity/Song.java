@@ -35,10 +35,6 @@ public class Song extends EntityBaseData implements Serializable{
 	 * Falta parte del media
 	 */
 	
-		
-	@JoinColumn(name = "id_autor", referencedColumnName = "id")
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false, fetch = FetchType.EAGER)
-	private Artist artist;
 	
 	//luego se pueden agregar co-artistas o featuring
 	

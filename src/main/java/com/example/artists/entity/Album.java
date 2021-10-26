@@ -4,8 +4,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
@@ -35,7 +39,10 @@ public class Album extends EntityBaseData implements Serializable{
 	
 	
 	@OneToMany(mappedBy = "album")	
-	private List<Song> songs = new ArrayList<>();
+	private List<Song> songs = new ArrayList<Song>();
 	
+	@JoinColumn(name = "id_artist", referencedColumnName = "id")
+	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = true, fetch = FetchType.EAGER)
+	private Artist artist;
 	
 }
