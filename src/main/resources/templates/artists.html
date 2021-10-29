@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="includes/header :: header"></head>
+<body>
+
+<div class="container">
+	<tr th:each= "artist : ${artists}">
+		<td th:text="${artist.name}">ACDC</td>
+		<!-- <td th:text="${artist.date}">Viernes 29 de octubre</td> -->
+	</tr>
+
+
+</div>
+
+
+</body>
+</html>
