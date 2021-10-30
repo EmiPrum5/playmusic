@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.artists.entity.Artist;
 import com.example.artists.services.ArtistsService;
 
+
+
+
+
 @Controller
 @RequestMapping("/artists")
 public class ArtistsController {
@@ -26,7 +30,7 @@ public class ArtistsController {
 	@RequestMapping("")
 	public String artists(Model model) {
 		List<Artist> artists = artistsService.getAllByMostRecent();
-		model.addAttribute("artists", artists);
+		model.addAttribute("artists", artists);		
 		return "artists";
 	}
 	

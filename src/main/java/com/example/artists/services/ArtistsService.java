@@ -4,9 +4,13 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Service;
+
 import com.example.artists.entity.Album;
 import com.example.artists.entity.Artist;
 
+
+@Service
 public interface ArtistsService {
 	
 	List<Artist> getAllByMostRecent();

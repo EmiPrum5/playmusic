@@ -13,14 +13,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
 
-import lombok.Getter;
-import lombok.Setter;
-
 
 @Entity
 @Table(name= "artist")
-@Getter
-@Setter
 public class Artist extends EntityBaseData implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -34,7 +29,15 @@ public class Artist extends EntityBaseData implements Serializable{
 	private String name;	
 	
 	@OneToMany(mappedBy = "artist")
-	List<Album> albums = new ArrayList<>(); 
+	List<Album> albums = new ArrayList<>();
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	
 }
