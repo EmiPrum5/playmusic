@@ -1,6 +1,7 @@
 package com.example.artists.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -53,6 +54,11 @@ public class ArtistsServiceImpl implements ArtistsService{
 	@Transactional
 	public void update(Artist artist) {
 		 artistsRepository.save(artist);		
+	}
+
+	@Override
+	public Optional<Artist> findId(long id) {
+		return artistsRepository.findById(id);
 	}
 	
 }

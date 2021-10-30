@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="includes/header :: header"></head>
+<body>
+
+<div class="container">
+	<div class="card">
+		<div>
+			<h1>Detalles del artista</h1>
+		</div>
+
+		<div class="card-body">
+			 <div class="row justify-content-sm-start">            
+	            <div class="col col-sm-auto">
+	                <span th:text="${artist.name}">Buckethead</span>
+	            </div>
+	         </div>
+			
+		</div>	
+
+		<div class="container">
+		    <a class="btn btn-primary">
+		    	Editar
+		    </a>
+
+		    <a class="btn btn-danger">
+		    	Borrar
+		    </a>
+
+		    <a class="btn btn-outline-primary">
+		    	Listado de canciones
+		    </a>
+		</div>
+	</div>
+
+</div>
+
+<div th:replace="includes/footer :: footer"></div>
+
+</body>
+</html>

@@ -1,6 +1,7 @@
 package com.example.artists.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -18,6 +19,8 @@ public interface ArtistsService {
 	List<Artist> findByName(String name);
 	
 	Artist findByAlbum(Album album);
+	
+	Optional<Artist> findId(long id);
 	
 	@Transactional
 	void insert(Artist artist);
