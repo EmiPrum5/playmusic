@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="includes/header :: header"></head>
+
+<body>
+<div class="container">    
+    <div class="card">
+
+        <div class="card-header">
+            <h1 class="card-title" th:if="${artistForm.new}">Nuevo artista</h1>
+            <h1 class="card-title" th:unless="${artistForm.new}">Editar artista</h1>
+        </div> 
+    
+
+
+        <div class="card-body">
+            <form th:object="${artistForm}" method="post">
+                <div class="container">                    
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input id="name" type="text" class="form-control" placeholder="Nombre del artista"
+                        th:field="*{name}"
+                        th:errorclass="error"/>
+                        
+                        <small class="form-text text-muted">Ingresá el nombre del artista.</small>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <button class="btn btn-primary" th:text="#{common.save}">Guardar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div th:replace="includes/footer :: footer"></div>
+
+</body>
+</html>

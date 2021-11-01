@@ -3,19 +3,17 @@ package com.example.artists.entity;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.annotation.CreatedDate;
-
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @MappedSuperclass
-@Getter
-@Setter
+@EntityListeners(AuditingEntityListener.class)
 public class EntityBaseData {
 	
 	
@@ -25,7 +23,7 @@ public class EntityBaseData {
 	private Long id;	
 	
 	
-	@Column(name = "dateofcreation")
+	@Column(name = "dateofcreation" , nullable = false, updatable = false)
 	@CreatedDate
 	private Date date;
 
